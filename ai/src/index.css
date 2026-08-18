@@ -1,0 +1,284 @@
+/* ==========================================================================
+   HARSHAN RASU PORTFOLIO — PIXEL-PERFECT DEV/PIXEL ALIGNMENT SYSTEM
+   ========================================================================== */
+
+:root {
+  /* DEV/PIXEL Template Palette */
+  --blue-primary: #0047FF;
+  --lime-accent: #CCFF00;
+  --lime-hover: #b8e600;
+  --bg-dark: #050505;
+  --bg-dark-card: #0E0E0E;
+  --bg-light: #F4F4F6;
+  --bg-white: #FFFFFF;
+  
+  --text-dark: #050505;
+  --text-light: #FFFFFF;
+  --text-muted: #555555;
+  --text-muted-dark: #999999;
+
+  --border-light: rgba(5, 5, 5, 0.12);
+  --border-dark: rgba(255, 255, 255, 0.15);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --ease-framer: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s ease;
+}
+
+/* Lenis Smooth Scroll Engine CSS Rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Selection */
+::selection {
+  background: var(--lime-accent);
+  color: #050505;
+}
+
+/* Layout Container — STRICT FIT TO PAGE */
+.wide-canvas {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+}
+
+.section-spacing {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Typography Scale */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--text-dark);
+  text-transform: uppercase;
+}
+
+.mono-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+/* CENTERED ICON WRAPPER HELPER */
+.icon-box-centered {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+/* DEV/PIXEL Buttons — PERFECT CENTER ALIGNMENT */
+.devpixel-btn-lime {
+  background-color: var(--lime-accent);
+  color: #050505;
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(204, 255, 0, 0.35);
+  line-height: 1;
+}
+
+.devpixel-btn-lime:hover {
+  transform: translateY(-2px);
+  background-color: var(--lime-hover);
+  box-shadow: 0 8px 24px rgba(204, 255, 0, 0.5);
+}
+
+.devpixel-btn-black {
+  background-color: #050505;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  line-height: 1;
+}
+
+.devpixel-btn-black:hover {
+  transform: translateY(-2px);
+  background-color: #1a1a1a;
+}
+
+.devpixel-btn-outline {
+  background: transparent;
+  color: #050505;
+  border: 2px solid #050505;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.devpixel-btn-outline:hover {
+  background: #050505;
+  color: #FFFFFF;
+}
+
+/* Custom Cursor */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: var(--lime-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .cursor-dot { display: block; }
+}
+
+/* DEV/PIXEL Top Header Bar — PERFECT ALIGNMENT */
+.devpixel-header-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #050505;
+  color: #FFFFFF;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.devpixel-logo {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.devpixel-logo span {
+  color: var(--lime-accent);
+}
+
+.devpixel-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.devpixel-nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #CCCCCC;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.devpixel-nav-link:hover, .devpixel-nav-link.active {
+  color: var(--lime-accent);
+}
+
+/* Responsive Utilities */
+@media (max-width: 899px) {
+  .devpixel-nav-links {
+    display: none;
+  }
+}
